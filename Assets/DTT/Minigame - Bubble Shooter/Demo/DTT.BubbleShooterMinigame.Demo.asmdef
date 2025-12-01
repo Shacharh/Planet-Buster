@@ -1,0 +1,16 @@
+{
+    "name": "DTT.BubbleShooterMinigame.Demo",
+    "references": [
+        "GUID:b2f30721429990f4a89c0a899cb202a8",
+        "GUID:40110409d6f32d94c8a49de52995a651"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

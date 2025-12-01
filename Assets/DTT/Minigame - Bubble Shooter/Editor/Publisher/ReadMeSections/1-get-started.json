@@ -1,0 +1,11 @@
+﻿{
+  "title": "Bubble Shooter Minigame: get started quickly",
+  "text": "[The Bubble Shooter Minigame generates a grid populated with randomly generated bubbles. The player gets the ability to shoot bubbles from a turret to match connected bubbles and make them pop as long as they match.][Want to dive deeper? Take a look at our documentation:][l]",
+  "links": [
+    {
+      "text": "Open documentation",
+      "url": "Documentation.pdf",
+      "inline": false
+    }
+  ]
+}
