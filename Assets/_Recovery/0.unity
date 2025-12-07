@@ -353,10 +353,10 @@ MonoBehaviour:
   _manager: {fileID: 1791639042}
   _controllerTemplate: {fileID: 2225988293544669059, guid: 235b7a34ea6dd314e9d9c1fc022be415, type: 3}
   _customBubbleSprites:
-  - {fileID: 5303648504760513018, guid: 6931c90374a0e7245b01588e6c25f6b2, type: 3}
+  - {fileID: -6949282093411560000, guid: 3503904b4f39cc045870e643fe3504ee, type: 3}
   - {fileID: -8452962842166454127, guid: 4abeaba253443754e93390c95c9ed900, type: 3}
   - {fileID: 3253402073035815428, guid: 17bb50d8d77736f4eb5b71b56c5b3a02, type: 3}
-  - {fileID: -6949282093411560000, guid: 3503904b4f39cc045870e643fe3504ee, type: 3}
+  - {fileID: 5303648504760513018, guid: 6931c90374a0e7245b01588e6c25f6b2, type: 3}
   - {fileID: -1433241907802201571, guid: ec97fa3bf4913524e8a2662b7208fb7d, type: 3}
   _spacing: 0.02
   _fadingSpeed: 10
@@ -3539,7 +3539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ff27ea59ed36444b953f64aa177ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inspectorConfig: {fileID: 11400000, guid: 61bb5caf0485e724e9f93b4e4eefebbd, type: 2}
 --- !u!4 &1791639043
 Transform:
   m_ObjectHideFlags: 0

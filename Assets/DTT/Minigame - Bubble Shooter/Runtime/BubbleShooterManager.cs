@@ -11,10 +11,28 @@ namespace DTT.BubbleShooter
     /// </summary>
     public class BubbleShooterManager : MonoBehaviour, IMinigame<BubbleShooterConfig, BubbleShooterResult>
     {
+        // --- NEW CODE START ---
+        [SerializeField]
+        [Tooltip("Drag your BubbleShooter Config file here!")]
+        private BubbleShooterConfig _inspectorConfig;
+        // --- NEW CODE END ---
+
         /// <summary>
         /// The Config property is a reference to the configuration passed through the inspector.
         /// </summary>
         public BubbleShooterConfig Config { get; private set; }
+
+        // --- NEW CODE START ---
+        private void Awake()
+        {
+            // 1. Force load the config immediately so other scripts can read it
+            if (_inspectorConfig != null)
+            {
+                Config = _inspectorConfig;
+            }
+        }
+        
+        // --- NEW CODE END ---
 
         /// <summary>
         /// The Grid property is the <see cref="HexagonGrid"/> instance that bubbles are placed on.

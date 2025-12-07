@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89d22-414f-4eeb-9f5e-03783e2abf1a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Demo/BubbleShooter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Demo/BubbleShooter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/HexagonGrid/Nodes/Bubble.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/HexagonGrid/Nodes/Bubble.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Bubble.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/DemoGridRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/DemoGridRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/Renderers/ColoredBubbleRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/Renderers/ColoredBubbleRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/Renderers/NumberedBubbleRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/Renderers/NumberedBubbleRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +102,7 @@
       <workItem from="1764787647894" duration="202000" />
       <workItem from="1764862707791" duration="7948000" />
       <workItem from="1765024306854" duration="7598000" />
+      <workItem from="1765118857411" duration="489000" />
     </task>
     <servers />
   </component>
