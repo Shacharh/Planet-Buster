@@ -24,6 +24,15 @@ namespace DTT.BubbleShooter.Demo
         [SerializeField]
         private BubbleController _controllerTemplate;
 
+        // --- NEW CODE START ---
+        /// <summary>
+        /// DRAG YOUR 5 CUSTOM SPRITES HERE IN THE INSPECTOR
+        /// Ensure the order matches your Config colors (Element 0 = Blue, Element 1 = Red, etc.)
+        /// </summary>
+        [SerializeField]
+        private List<Sprite> _customBubbleSprites;
+        // --- NEW CODE END ---
+
         /// <summary>
         /// The _spacing field is the distance in world position bubbles have between one another.
         /// </summary>
@@ -91,9 +100,25 @@ namespace DTT.BubbleShooter.Demo
 
             _renderers = new Dictionary<System.Type, IBubbleRenderer>();
 
-            Sprite defaultBubbleSprite = _controllerTemplate.GetComponent<SpriteRenderer>().sprite;
-            _renderers.Add(typeof(ColoredBubble), new ColoredBubbleRenderer(defaultBubbleSprite));
-            _renderers.Add(typeof(NumberedBubble), new NumberedBubbleRenderer(defaultBubbleSprite));
+            // --- NEW CODE START ---
+            // 1. Create a clean list of just the Colors from the Config, so we can map them to sprites
+            // We assume _manager.Config.BubbleColors is a list of objects that have a .Color property
+            List<Color> definedColors = new List<Color>();
+            
+            // Note: If 'BubbleColors' is a List<Color> directly, remove the .Select part. 
+            // Based on DTT structure, it's likely a struct with weights.
+            if (_manager.Config != null && _manager.Config.ColorConfiguration != null)
+            {
+                 // We rely on LINQ to extract just the Color values from the config list
+                 // If you get an error here regarding 'ColorDefinition', let me know.
+                 definedColors = _manager.Config.ColorConfiguration.Select(c => c.BubbleColors).ToList();
+            }
+
+            // 2. Pass the Custom Sprite List and the Color List to the renderers
+            // (Make sure you updated ColoredBubbleRenderer.cs as well!)
+            _renderers.Add(typeof(ColoredBubble), new ColoredBubbleRenderer(_customBubbleSprites, definedColors));
+            _renderers.Add(typeof(NumberedBubble), new NumberedBubbleRenderer(_customBubbleSprites, definedColors));
+            // --- NEW CODE END ---
         }
 
         /// <summary>
@@ -187,6 +212,7 @@ namespace DTT.BubbleShooter.Demo
 
         private float GetWallsPosition(int width)
         {
+            if (_controllers[0,0] == null) return 0f; // Safety check
             float bubbleScale = _controllers[0, 0].SpriteRenderer.bounds.size.x;
             return bubbleScale * (width) + _spacing * (width+2);
         }
@@ -220,7 +246,7 @@ namespace DTT.BubbleShooter.Demo
         {
             if(_controllers != null)
                 foreach (BubbleController controller in _controllers)
-                    Destroy(controller.gameObject);
+                    if(controller != null) Destroy(controller.gameObject);
 
             foreach (BubbleController controller in FindObjectsOfType<BubbleController>())
                 Destroy(controller.gameObject);
@@ -248,7 +274,12 @@ namespace DTT.BubbleShooter.Demo
                  int x = cellPosition.x;
                  int y = cellPosition.y;
 
+                 if(_controllers != null && x < _controllers.GetLength(0) && y < _controllers.GetLength(1)) {
+                 
                  BubbleController controller = _controllers[x, y];
+                 
+                 // Safety Check
+                 if(controller == null) continue;
 
                  Bubble bubble = updatedCell.Node;
                  Bubble oldBubble = controller.Bubble;
@@ -261,8 +292,7 @@ namespace DTT.BubbleShooter.Demo
                      controller.transform.localScale = new Vector3(_maximumSize.Value, _maximumSize.Value,0);
                 
                  float xPosition = spriteBoundsSize.x * (x - _manager.Grid.Width / 2f) + spriteBoundsSize.x / 4f + (_spacing * x);
-                 float yPosition = spriteBoundsSize.y * 
-                                   (_manager.Grid.RealHeight - y) - 
+                 float yPosition = spriteBoundsSize.y * (_manager.Grid.RealHeight - y) - 
                                    (_manager.Grid.RealHeight * spriteBoundsSize.y) - (_spacing * y);
 
                  float quarterSpriteWidth = spriteBoundsSize.x / 4;
@@ -297,8 +327,15 @@ namespace DTT.BubbleShooter.Demo
                      // If new line is added, make bubble move down.
                      if (bubble.InitialPosition != null && instant)
                          controller.MoveAnimation(bubble, new Vector3(xPosition, yPosition, 0));
-                     Render(bubble, controller, new Vector3(xPosition, yPosition, 0));
-                 }
+// --- DEBUG LOG ---
+                     if (bubble is ColoredBubble cBubble)
+                     {
+                         // This will print the actual color code (RGBA) the game thinks this bubble is
+                         Debug.Log($"Spawning Bubble at [{x},{y}] - Color Code: {cBubble.Color}");
+                     }
+// --------------------------
+
+                     Render(bubble, controller, new Vector3(xPosition, yPosition, 0));                 }
                  else if (oldBubble != null)
                  {
                      InitiateHide(controller);
@@ -311,6 +348,7 @@ namespace DTT.BubbleShooter.Demo
                  
                  if (!instant)
                      yield return new WaitForSeconds(0.04f);
+                 }
              }
              if(!instant)
                  _manager.Turret.canShoot = true;

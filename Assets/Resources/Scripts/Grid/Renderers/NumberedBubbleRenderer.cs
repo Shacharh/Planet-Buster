@@ -1,37 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace DTT.BubbleShooter.Demo
 {
-    /// <summary>
-    /// This class is responsible for rendering a <see cref="NumberedBubble"/> on a given <see cref="BubbleController"/>.
-    /// </summary>
     public class NumberedBubbleRenderer : IBubbleRenderer
     {
-        /// <summary>
-        /// The _defaultSprite field is the sprite used when showing the <see cref="BubbleController"/>.
-        /// </summary>
-        private readonly Sprite _defaultSprite;
+        private readonly List<Sprite> _customSprites;
+        private readonly List<Color> _gameColors;
 
-        /// <summary>
-        /// The constructor initializes the <see cref="_defaultSprite"/> field value.
-        /// </summary>
-        /// <param name="defaultSprite">The default sprite to use when showing the <see cref="BubbleController"/>.</param>
-        public NumberedBubbleRenderer(Sprite defaultSprite) => _defaultSprite = defaultSprite;
+        public NumberedBubbleRenderer(List<Sprite> customSprites, List<Color> gameColors)
+        {
+            _customSprites = customSprites;
+            _gameColors = gameColors;
+        }
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="bubble"><inheritdoc/></param>
-        /// <param name="controller"><inheritdoc/></param>
         public void Render(Bubble bubble, BubbleController controller)
         {
             NumberedBubble numberedBubble = bubble as NumberedBubble;
-            controller.SpriteRenderer.sprite = _defaultSprite;
-            controller.SpriteRenderer.color = numberedBubble.Color;
-            controller.Text.text = numberedBubble.Number.ToString();
+
+            if (numberedBubble != null)
+            {
+                // CHANGE: Use the same helper logic here
+                int colorIndex = FindClosestColorIndex(numberedBubble.Color);
+
+                if (colorIndex != -1 && colorIndex < _customSprites.Count)
+                {
+                    controller.SpriteRenderer.sprite = _customSprites[colorIndex];
+                }
+                else if (_customSprites.Count > 0)
+                {
+                    controller.SpriteRenderer.sprite = _customSprites[0];
+                }
+
+                controller.SpriteRenderer.color = Color.white;
+                controller.Text.text = numberedBubble.Number.ToString();
+            }
+        }
+
+        private int FindClosestColorIndex(Color targetColor)
+        {
+            int bestIndex = -1;
+            float minDifference = 0.05f; 
+
+            for (int i = 0; i < _gameColors.Count; i++)
+            {
+                Color candidate = _gameColors[i];
+                float diff = Mathf.Abs(candidate.r - targetColor.r) +
+                             Mathf.Abs(candidate.g - targetColor.g) +
+                             Mathf.Abs(candidate.b - targetColor.b);
+
+                if (diff < minDifference)
+                {
+                    minDifference = diff;
+                    bestIndex = i;
+                }
+            }
+            return bestIndex;
         }
     }
 }

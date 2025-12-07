@@ -9,6 +9,7 @@ namespace DTT.BubbleShooter
     /// <summary>
     /// This class holds properties for a bubble used in the grid of the playing field and as ammunition.
     /// </summary>
+    
     public abstract class Bubble
     {
         /// <summary>
@@ -27,7 +28,7 @@ namespace DTT.BubbleShooter
         /// The ToPop event is invoked and used internally when the bubble has to be popped through the grid.
         /// </summary>
         internal event Action ToPop;
-
+        
         /// <summary>
         /// The Popped event is invoked upon this bubbles popping in the grid.
         /// </summary>
