@@ -2,6 +2,7 @@ using DTT.MinigameBase;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using DTT.BubbleShooter.Demo;
 using UnityEngine;
 
 namespace DTT.BubbleShooter
@@ -12,6 +13,15 @@ namespace DTT.BubbleShooter
     public class BubbleShooterManager : MonoBehaviour, IMinigame<BubbleShooterConfig, BubbleShooterResult>
     {
         // --- NEW CODE START ---
+        /// <summary>
+        /// The NextBubbleUI is storing the next bubble.
+        /// </summary>
+        [SerializeField]
+        [Tooltip("Drag the 'Flare' object here")]
+        private NextBubbleUI _nextBubbleUI; 
+
+        private Bubble _nextBubble; // Stores the data for the upcoming bubble
+        
         [SerializeField]
         [Tooltip("Drag your BubbleShooter Config file here!")]
         private BubbleShooterConfig _inspectorConfig;
@@ -281,6 +291,22 @@ namespace DTT.BubbleShooter
                 Grid.Populate(y + 1);
 
             Pool.Recompute();
+            
+            // 1. Give the UI the color list so it can match sprites
+            List<Color> configColors = new List<Color>();
+            foreach(var c in Config.ColorConfiguration) configColors.Add(c.BubbleColors);
+            _nextBubbleUI.Initialize(configColors);
+
+            // 2. Pick the FIRST bubble (for the cannon)
+            Bubble firstBubble = Pool.PickBubble();
+            Turret.Reload(firstBubble);
+
+            // 3. Pick the SECOND bubble (for the queue)
+            _nextBubble = Pool.PickBubble();
+    
+            // 4. Update the visual
+            UpdateNextBubbleUI();
+            
             Turret.Reload(Pool.PickBubble());
         }
         
@@ -353,10 +379,29 @@ namespace DTT.BubbleShooter
             }
 
             CheckForNewRow();
-
             Pool.Recompute();
-            Turret.Reload(Pool.PickBubble());
+            // 1. Load the turret with the bubble that was waiting
+            Turret.Reload(_nextBubble);
+
+            // 2. Pick a NEW bubble for the waiting line
+            _nextBubble = Pool.PickBubble();
+
+            // 3. Update the visual
+            UpdateNextBubbleUI();
+    
+            // --- NEW LOGIC END ---
         }
+
+        // Add this small helper method at the bottom of the script
+        private void UpdateNextBubbleUI()
+        {
+            if (_nextBubbleUI == null || _nextBubble == null) return;
+
+            if (_nextBubble is ColoredBubble cb)
+                _nextBubbleUI.UpdatePreview(cb.Color);
+            else if (_nextBubble is NumberedBubble nb)
+                _nextBubbleUI.UpdatePreview(nb.Color);
+        }        
 
         /// <summary>
         /// The CheckForNewRow method checks if a new row should be added after a set amount of missed shots by the turret.

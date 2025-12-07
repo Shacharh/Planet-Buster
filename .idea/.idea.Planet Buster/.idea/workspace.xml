@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b89d22-414f-4eeb-9f5e-03783e2abf1a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BubbleShooter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BubbleShooter.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +104,8 @@
       <workItem from="1764787647894" duration="202000" />
       <workItem from="1764862707791" duration="7948000" />
       <workItem from="1765024306854" duration="7598000" />
-      <workItem from="1765118857411" duration="489000" />
+      <workItem from="1765118857411" duration="1536000" />
+      <workItem from="1765123103092" duration="666000" />
     </task>
     <servers />
   </component>
