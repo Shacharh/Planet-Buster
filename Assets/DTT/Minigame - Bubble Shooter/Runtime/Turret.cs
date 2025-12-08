@@ -10,6 +10,7 @@ namespace DTT.BubbleShooter
     /// </summary>
     public class Turret
     {
+        
         /// <summary>
         /// The _bubble field holds the currently loaded <see cref="BubbleShooter.Bubble"/> instances that acts as ammunition.
         /// </summary>

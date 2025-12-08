@@ -191,8 +191,8 @@ namespace DTT.BubbleShooter.Demo
                 _maximumSize = null;
             }
 
-            _wallsLeft.transform.position = new Vector3(-(scale*1.1f) / 2, 0, 0);
-            _wallsRight.transform.position = new Vector3((scale*1.1f) / 2, 0, 0);
+            _wallsLeft.transform.position = new Vector3(-(scale*1.2f) / 2, 0, 0);
+            _wallsRight.transform.position = new Vector3((scale*1.2f) / 2, 0, 0);
             
             _manager.Grid.ForceNotifyUpdate();
         }
