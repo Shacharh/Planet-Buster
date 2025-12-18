@@ -24,11 +24,11 @@ MonoBehaviour:
   - _bubbleColors: {r: 0.9176471, g: 0.2392157, b: 0.1254902, a: 1}
     _weight: 50
   _missedShotsTillNewRow: 20
-  _shotsTillNewRow: 5
-  _relativityMode: 1
-  _gridWidth: 7
+  _shotsTillNewRow: 6
+  _relativityMode: 3
+  _gridWidth: 6
   _initialGridHeight: 4
-  _gridHeightThreshold: 14
+  _gridHeightThreshold: 10
   _useEducativeElement: 0
   _minimumBubbleNumber: 1
   _maximumBubbleNumber: 5
