@@ -5275,7 +5275,7 @@ PrefabInstance:
     - target: {fileID: 2001140477254427606, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3651677710862211053, guid: c2187740932f7244fba5da818dcb0160, type: 3}
+      objectReference: {fileID: -3651677710862211053, guid: 85fca1dcdf302634b9a4620edc1020d3, type: 3}
     - target: {fileID: 2220407476193527951, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_Name
       value: Shield Mirrored
