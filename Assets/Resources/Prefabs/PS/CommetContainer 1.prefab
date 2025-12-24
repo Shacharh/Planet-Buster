@@ -289,7 +289,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
+      scalar: 4
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -342,7 +342,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
+      scalar: 4
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -395,7 +395,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
+      scalar: 4
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -5049,8 +5049,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 20
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9725,6 +9725,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2234153767603467327}
+  - component: {fileID: 7804829278816315584}
+  - component: {fileID: 3042749245474573964}
   m_Layer: 0
   m_Name: CommetContainer 1
   m_TagString: Untagged
@@ -9748,3 +9750,36 @@ Transform:
   - {fileID: 7460928096856551761}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7804829278816315584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749113534998456093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2d739613c7d184fa91e828f004a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CometMovement
+  minSpeed: 3
+  maxSpeed: 6
+  curveStrength: 1.5
+--- !u!114 &3042749245474573964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749113534998456093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac99c79b25112fa458336e90462687b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CometSpawner
+  cometPrefab: {fileID: 8749113534998456093}
+  maxComets: 3
+  minSpawnDelay: 1
+  maxSpawnDelay: 4
+  sideSpawnHeight: 0.5
+  spawnBuffer: 1

@@ -7,6 +7,7 @@ public class CometSpawner : MonoBehaviour
     [Header("Settings")]
     public GameObject cometPrefab;
     public int maxComets = 3;
+    public Transform background;
     
     [Header("Timing")]
     public float minSpawnDelay = 1.0f;
@@ -101,7 +102,7 @@ public class CometSpawner : MonoBehaviour
         targetPos = new Vector3(targetX, bottomEdge - 2.0f, 0); // Aim below screen
 
         // Instantiate
-        GameObject newComet = Instantiate(cometPrefab, spawnPos, Quaternion.identity);
+        GameObject newComet = Instantiate(cometPrefab, spawnPos, Quaternion.identity, background);
         
         // Initialize the movement script with our calculated path
         CometMovement mover = newComet.GetComponent<CometMovement>();
