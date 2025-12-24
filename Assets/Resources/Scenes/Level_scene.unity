@@ -5187,6 +5187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2001140477254427606, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3651677710862211053, guid: c2187740932f7244fba5da818dcb0160, type: 3}
     - target: {fileID: 2220407476193527951, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_Name
       value: Shield Mirrored
@@ -5296,7 +5300,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3560271932414009989, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+    - {fileID: 6219879584645590179, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
