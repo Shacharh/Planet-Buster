@@ -1306,14 +1306,14 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_TargetDisplay: 0
 --- !u!224 &600749769
 RectTransform:
@@ -5419,8 +5419,8 @@ PrefabInstance:
       value: Shield Mirrored
       objectReference: {fileID: 0}
     - target: {fileID: 3850270798887188649, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
-      propertyPath: _maximumRecursions
-      value: 2
+      propertyPath: _maximumSegmentLength
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4148218936084945029, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_Name
