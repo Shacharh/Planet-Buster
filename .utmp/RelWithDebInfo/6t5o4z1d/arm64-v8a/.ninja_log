@@ -1,0 +1,23 @@
+# ninja log v5
+1073	1449	7886410434900000	D:/Unity Projects/Planet Buster/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t5o4z1d/obj/arm64-v8a/libswappywrapper.so	6f4bbf5688198d84
+1	3836	7886410422700000	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	96c7b7f2784d4511
+122	1070	7886410425800000	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	d4e1017fc44d0400
+41	3496	7886410423000000	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c0726fceeaaddd5
+55	3550	7886410423200000	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	287576f0d3d5d0bc
+105	3648	7886410425800000	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9f2ce66e88bf14a5
+26	3573	7886410422900000	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3971aa01c450eba3
+13	3597	7886410422800000	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c9d8ae640360b5dc
+87	3584	7886410423600000	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	98da39e80c11e503
+70	3789	7886410423400000	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	21c0e632e4b964a4
+3837	5355	7886410468400000	D:/Unity Projects/Planet Buster/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t5o4z1d/obj/arm64-v8a/libgame.so	f04550b6bf770167
+89	869	7886483107500000	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	d4e1017fc44d0400
+58	1610	7886483107200000	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	287576f0d3d5d0bc
+19	1618	7886483106800000	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3971aa01c450eba3
+35	1622	7886483107000000	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4c0726fceeaaddd5
+67	1627	7886483107300000	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	98da39e80c11e503
+11	1631	7886483107000000	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c9d8ae640360b5dc
+870	1632	7886483120500000	D:/Unity Projects/Planet Buster/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t5o4z1d/obj/arm64-v8a/libswappywrapper.so	6f4bbf5688198d84
+41	1652	7886483107100000	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	21c0e632e4b964a4
+28	1670	7886483106800000	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	96c7b7f2784d4511
+77	1711	7886483107400000	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9f2ce66e88bf14a5
+1711	2032	7886483125300000	D:/Unity Projects/Planet Buster/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t5o4z1d/obj/arm64-v8a/libgame.so	f04550b6bf770167

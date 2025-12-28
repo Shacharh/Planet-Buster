@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="05b89d22-414f-4eeb-9f5e-03783e2abf1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/TrajectoryTracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/TrajectoryTracer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/tools/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame Base/Assets/Prefabs/Level Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame Base/Assets/Prefabs/Level Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame Base/Assets/Scenes/DTT Level Select.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame Base/Assets/Scenes/DTT Level Select.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts/Space Obsessed SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts/Space Obsessed SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Input/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Input/MobileInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Input/MobileInputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +53,17 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../game design/Builds/Planet Buster/Test\Planet Buster.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\game design\Builds\Planet Buster\Version Beta 0.9.9" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.0f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Unity Projects\Planet Buster&quot; -debugCodeOptimization" />
@@ -110,6 +131,7 @@
       <workItem from="1766327593039" duration="1495000" />
       <workItem from="1766591403278" duration="1073000" />
       <workItem from="1766679842316" duration="1960000" />
+      <workItem from="1766935808679" duration="6206000" />
     </task>
     <servers />
   </component>

@@ -1,36 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace DTT.BubbleShooter.Demo
 {
-    /// <summary>
-    /// <inheritdoc/>
-    /// </summary>
     public class MobileInputController : InputController
     {
-        /// <summary>
-        /// The Update method continuously checks for input on the mobile device.
-        /// </summary>
         private void Update()
         {
-            if (Input.touchCount == 0)
-                return;
+            // UNITY TRICK: Input.mousePosition works on Android too!
+            // It returns the position of the first finger touch.
+            Vector3 inputPos = Input.mousePosition;
 
-            Touch touch = Input.touches[0];
-            Vector2 touchPosition = touch.position;
+            // 1. HANDLE HOVER (Aiming)
+            // On Android, we only want to aim if the user is actually touching the screen.
+            // (Input.GetMouseButton(0) returns true if 1 or more fingers are touching)
+            if (Input.GetMouseButton(0))
+            {
+                if (!IsTouchingUI())
+                {
+                    InvokeHover(inputPos);
+                }
+            }
 
-            InvokeHover(touchPosition);
-
-            if (touch.phase == TouchPhase.Ended)
-                InvokePerform(touchPosition);
+            // 2. HANDLE PERFORM (Shooting)
+            // Input.GetMouseButtonUp(0) returns true when the finger is lifted.
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (!IsTouchingUI())
+                {
+                    InvokePerform(inputPos);
+                }
+            }
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// This is the MAGIC FIX. 
+        /// Instead of checking "currentSelectedGameObject" (which gets stuck),
+        /// we check if the pointer is physically over UI right now.
         /// </summary>
-        /// <returns><inheritdoc/></returns>
-        protected override bool AllowInput() => EventSystem.current.currentSelectedGameObject == null;
+        private bool IsTouchingUI()
+        {
+            if (EventSystem.current == null) return false;
+
+            // Check if the mouse/finger is currently hovering over a UI element
+            return EventSystem.current.IsPointerOverGameObject();
+        }
+
+        // We force this to true because we handle the safety checks manually above.
+        protected override bool AllowInput() => true;
     }
 }
