@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 176912229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.41, z: 0}
+  m_LocalPosition: {x: 0, y: 4.41, z: 5.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1001,14 +1001,14 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -982976811
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &600749769
 RectTransform:
@@ -1018,7 +1018,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600749765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -11680}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2234153767603467327, guid: d3256bf7bbb3d7144bc04df706568651, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 37.07
       objectReference: {fileID: 0}
     - target: {fileID: 2234153767603467327, guid: d3256bf7bbb3d7144bc04df706568651, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1726,8 +1726,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c9ba1d4e32e40642a05c49747b973dc, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -8666105413095354656, guid: bf1e159a3f953074481e79d8c4fb6cb1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2508,7 +2508,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a5ae1b4d46e6ef943ac83463d4e9dcaa, type: 3}
+    m_Font: {fileID: 12800000, guid: 230eb4112c7ec3640938572f47a41e5e, type: 3}
     m_FontSize: 68
     m_FontStyle: 0
     m_BestFit: 0
@@ -2738,8 +2738,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41fb14ef9af7ac9408ae0420087f1ef9, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -7148319982444032385, guid: 986231830b520f944a047a243c442bfc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3002,7 +3002,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 282840c0fbf460b4a8c333958a069c51, type: 3}
+    m_Font: {fileID: 12800000, guid: 230eb4112c7ec3640938572f47a41e5e, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
