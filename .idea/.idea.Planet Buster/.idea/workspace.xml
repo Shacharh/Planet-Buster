@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05b89d22-414f-4eeb-9f5e-03783e2abf1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts/Space Obsessed SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts/Space Obsessed SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/TracerLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TracerLine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Turret.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Turret.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/TrajectoryTracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/TrajectoryTracer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/TurretShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/TurretShooter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Spear/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Spear/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/DemoGridRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Grid/DemoGridRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +123,7 @@
       <workItem from="1766679842316" duration="1960000" />
       <workItem from="1766935808679" duration="6206000" />
       <workItem from="1767283747647" duration="614000" />
-      <workItem from="1767284384522" duration="1790000" />
+      <workItem from="1767284384522" duration="3709000" />
     </task>
     <servers />
   </component>

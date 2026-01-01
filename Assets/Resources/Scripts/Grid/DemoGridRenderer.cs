@@ -87,7 +87,12 @@ namespace DTT.BubbleShooter.Demo
         /// Maximum size of each bubble.
         /// </summary>
         private float? _maximumSize = null;
-        
+
+        [Header("Effects")]
+        [SerializeField]
+        [Tooltip("Drag your Bubble Pop Prefab here (can be a hierarchy)")]
+        private GameObject _popEffectPrefab; // CHANGED from ParticleSystem to GameObject
+
         /// <summary>
         /// The Awake method initializes event listeners for generating and destroying the grid.
         /// </summary>
@@ -216,11 +221,37 @@ namespace DTT.BubbleShooter.Demo
         }
 
         /// <summary>
-        /// The InitiateHide method starts scaling down the given controller until it vanishes.
+        /// The InitiateHide method handles the visual death of the bubble.
         /// </summary>
-        /// <param name="controller">The <see cref="BubbleController"/> instance to hide.</param>
         private async void InitiateHide(BubbleController controller)
         {
+            // ---------------------------------------------------------
+            // [UPDATED] Use Prefab Colors Only (No Tinting)
+            // ---------------------------------------------------------
+            if (_popEffectPrefab != null)
+            {
+                // 1. Position and Instantiate
+                Vector3 spawnPosition = controller.transform.position;
+                GameObject effectInstance = Instantiate(_popEffectPrefab, spawnPosition, Quaternion.identity);
+
+                // 2. Loop through particles ONLY to fix the Layer/Sorting Order
+                // We do NOT touch the color.
+                ParticleSystem[] childSystems = effectInstance.GetComponentsInChildren<ParticleSystem>();
+                foreach (ParticleSystem ps in childSystems)
+                {
+                    var renderer = ps.GetComponent<ParticleSystemRenderer>();
+                    if (renderer != null) 
+                    {
+                        // Forces the explosion to be drawn on top of the bubbles
+                        renderer.sortingOrder = 2000; 
+                    }
+                }
+
+                // 3. Cleanup
+                Destroy(effectInstance, 1.0f);
+            }
+            // ---------------------------------------------------------
+
             Vector3 initialScale = controller.transform.localScale;
             float scale = 1f;
 
