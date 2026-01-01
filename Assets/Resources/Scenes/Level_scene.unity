@@ -1482,6 +1482,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966216355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3850270798887188649, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+  m_PrefabInstance: {fileID: 4590875713983003237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7b90f3d5f525a4f9ae23fcb8336d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021236190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,9 +3945,41 @@ PrefabInstance:
       propertyPath: _maximumRecursions
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4088470663104609385, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088470663104609385, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088470663104609385, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.72285557
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088470663104609385, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4148218936084945029, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812543553709090900, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812543553709090900, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812543553709090900, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.5647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812543553709090900, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6070703902579897211, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: _manager
@@ -3950,6 +3993,14 @@ PrefabInstance:
       propertyPath: _inputManager
       value: 
       objectReference: {fileID: 1791639045}
+    - target: {fileID: 6070703902579897211, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: _trajectoryTracer
+      value: 
+      objectReference: {fileID: 966216355}
+    - target: {fileID: 6070703902579897211, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
+      propertyPath: _traceLineRenderer
+      value: 
+      objectReference: {fileID: 4556321038187732243, guid: bf81b98078085d64182ffa812fadfebb, type: 3}
     - target: {fileID: 7553788179688833726, guid: b9387dadb1f8fac4f9a51e99f2a36ebb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
