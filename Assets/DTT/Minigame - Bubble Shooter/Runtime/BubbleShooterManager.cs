@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using DTT.BubbleShooter.Demo;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DTT.BubbleShooter
 {
@@ -25,7 +26,7 @@ namespace DTT.BubbleShooter
         [SerializeField]
         [Tooltip("Drag your BubbleShooter Config file here!")]
         private BubbleShooterConfig _inspectorConfig;
-        // --- NEW CODE END ---
+        
 
         /// <summary>
         /// The Config property is a reference to the configuration passed through the inspector.
@@ -84,6 +85,10 @@ namespace DTT.BubbleShooter
         /// Score of the game.
         /// </summary>
         private int _score = 0;
+
+        [Header("UI")]
+        [SerializeField]
+        private Text _movesText;
 
         /// <summary>
         /// The TimeElapsed property is the time the bubble shooter game has been running for in seconds.
@@ -360,25 +365,58 @@ namespace DTT.BubbleShooter
         /// <param name="popSize">The number of bubble pop.</param>
         private void HandleBubbleAttachment(Bubble attachedBubble, Vector2Int position, bool didPop, List<HexagonCell> toPop)
         {
-            // ... [Previous scoring logic] ...
+            // --- 1. HANDLE MISSES & GAME OVER CHECKS ---
+            if (!didPop)
+            {
+                Turret.i_missedShots++;
+                Turret.i_totalMissedShots++;
+            }
+    
+            // Check if the bubble touched the bottom line (Game Over)
+            if(!didPop && position.y + 1 == Grid.RealHeight)
+            {
+                ForceFinish();
+                return;
+            }
 
+            // --- 2. RESTORED SCORING LOGIC ---
+            // (This was likely missing!)
+            if (didPop)
+            {
+                // Example calculation: 10 points per bubble, plus bonus for large clusters
+                int bonus = (int) (toPop.Count / 2) - 1;
+                _score += toPop.Count * (10 + bonus * 5);
+            }
+
+            // --- 3. DROP DOWN LOGIC ---
             CheckForNewRow();
 
-            // 1. Recalculate the pool (Removes colors that don't exist from the RNG)
+            // --- 4. UPDATE "MOVES LEFT" UI (The Artist Fix) ---
+            // Only works if you added the _movesText variable earlier
+            if (_movesText != null)
+            {
+                int totalLimit = Config.ShotsTillNewRow;
+                int movesLeft = totalLimit - (Turret.i_Shots % totalLimit);
+                int missesLeft = Config.MissedShotsTillNewRow - Turret.i_missedShots;
+        
+                // Show whichever number is smaller (whichever event happens first)
+                _movesText.text = Mathf.Min(movesLeft, missesLeft).ToString();
+            }
+
+            // --- 5. REFRESH POOL & NEXT BUBBLE (The Color Fix) ---
             Pool.Recompute();
 
-            // --- NEW FIX START ---
-            // 2. Check if the bubble currently waiting in line is now invalid
+            // Check if the bubble waiting in line is now an invalid color
             if (!IsColorStillValid(_nextBubble))
             {
-                // If the color is gone from the grid, force a new pick from the updated Pool
                 _nextBubble = Pool.PickBubble();
             }
-            // --- NEW FIX END ---
 
-            // 3. Reload Turret and prepare next
+            // Reload the gun and pick the next one
             Turret.Reload(_nextBubble);
             _nextBubble = Pool.PickBubble();
+
+            // Update the visual circle
             UpdateNextBubbleUI();
         }
 
