@@ -23,10 +23,10 @@ MonoBehaviour:
     _weight: 50
   - _bubbleColors: {r: 0.9176471, g: 0.2392157, b: 0.1254902, a: 1}
     _weight: 50
-  _missedShotsTillNewRow: 20
-  _shotsTillNewRow: 6
+  _missedShotsTillNewRow: 15
+  _shotsTillNewRow: 8
   _relativityMode: 3
-  _gridWidth: 6
+  _gridWidth: 8
   _initialGridHeight: 4
   _gridHeightThreshold: 10
   _useEducativeElement: 0
