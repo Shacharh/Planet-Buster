@@ -358,38 +358,28 @@ namespace DTT.BubbleShooter
         /// <param name="position">The zero-based position of the bubble that attached to the grid.</param>
         /// <param name="didPop">Whether the bubble popped a group upon attaching to the grid.</param>
         /// <param name="popSize">The number of bubble pop.</param>
-        private void HandleBubbleAttachment(Bubble attachedBubble, Vector2Int position, bool didPop,List<HexagonCell> toPop)
+        private void HandleBubbleAttachment(Bubble attachedBubble, Vector2Int position, bool didPop, List<HexagonCell> toPop)
         {
-            if (!didPop)
-            {
-                Turret.i_missedShots++;
-                Turret.i_totalMissedShots++;
-            }
-            
-            if(!didPop && position.y + 1 == Grid.RealHeight)
-            {
-                ForceFinish();
-                return;
-            }
-
-            if (didPop)
-            {
-                int bonus = (int) (toPop.Count / 2) - 1;
-                _score += toPop.Count * (10 + bonus * 5);
-            }
+            // ... [Previous scoring logic] ...
 
             CheckForNewRow();
+
+            // 1. Recalculate the pool (Removes colors that don't exist from the RNG)
             Pool.Recompute();
-            // 1. Load the turret with the bubble that was waiting
+
+            // --- NEW FIX START ---
+            // 2. Check if the bubble currently waiting in line is now invalid
+            if (!IsColorStillValid(_nextBubble))
+            {
+                // If the color is gone from the grid, force a new pick from the updated Pool
+                _nextBubble = Pool.PickBubble();
+            }
+            // --- NEW FIX END ---
+
+            // 3. Reload Turret and prepare next
             Turret.Reload(_nextBubble);
-
-            // 2. Pick a NEW bubble for the waiting line
             _nextBubble = Pool.PickBubble();
-
-            // 3. Update the visual
             UpdateNextBubbleUI();
-    
-            // --- NEW LOGIC END ---
         }
 
         // Add this small helper method at the bottom of the script
@@ -428,6 +418,49 @@ namespace DTT.BubbleShooter
         {
             if (Grid.Height == 0)
                 ForceFinish();
+        }
+        
+        /// <summary>
+        /// Checks if the color of the provided bubble currently exists anywhere on the grid.
+        /// </summary>
+        private bool IsColorStillValid(Bubble bubbleToCheck)
+        {
+            if (bubbleToCheck == null) return false;
+
+            // 1. Get the color we are looking for
+            Color colorToCheck = Color.clear;
+            if (bubbleToCheck is ColoredBubble cb) colorToCheck = cb.Color;
+            else if (bubbleToCheck is NumberedBubble nb) colorToCheck = nb.Color;
+            else return true; // Unknown type, assume valid to prevent errors
+
+            // 2. Scan the grid using the exact same dimensions as your Renderer
+            // We access the internal 'Nodes' or iterate via width/height
+            for (int x = 0; x < Grid.Width; x++) 
+            {
+                for (int y = 0; y < Grid.RealHeight; y++)
+                {
+                    // Access the cell from the manager's Grid property
+                    var cell = Grid[x, y]; 
+            
+                    // Check if cell has a bubble
+                    if (cell != null && cell.Node != null)
+                    {
+                        Color gridColor = Color.clear;
+                        if (cell.Node is ColoredBubble gridCb) gridColor = gridCb.Color;
+                        else if (cell.Node is NumberedBubble gridNb) gridColor = gridNb.Color;
+
+                        // Precision Check: Use a small threshold for floating point colors, 
+                        // or direct equality if they are from the exact same config object.
+                        if (gridColor == colorToCheck)
+                        {
+                            return true; // Found it! The color is still on the board.
+                        }
+                    }
+                }
+            }
+
+            // 3. If we finish the loop, the color is gone.
+            return false;
         }
     }
 }
