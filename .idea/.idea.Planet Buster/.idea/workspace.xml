@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05b89d22-414f-4eeb-9f5e-03783e2abf1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Planet Buster/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Minigame - Bubble Shooter/Runtime/BubbleShooterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/HUD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Level_scene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
